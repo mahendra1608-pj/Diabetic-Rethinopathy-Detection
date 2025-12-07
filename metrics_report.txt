@@ -1,0 +1,13 @@
+                  precision    recall  f1-score   support
+
+           No DR       0.99      0.99      0.99       269
+            Mild       0.71      0.90      0.79        60
+        Moderate       0.97      0.81      0.88       145
+          Severe       0.70      0.93      0.80        30
+Proliferative DR       0.86      0.82      0.84        44
+
+        accuracy                           0.92       548
+       macro avg       0.85      0.89      0.86       548
+    weighted avg       0.93      0.92      0.92       548
+
+Cohen’s Kappa: 0.8758
