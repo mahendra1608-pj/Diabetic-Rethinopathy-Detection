@@ -1,116 +1,100 @@
-Diabetic Retinopathy Detection and Classification using ResNet-50
+# Diabetic Retinopathy Detection and Classification using ResNet-50
 
-This project presents an automated deep learning–based system for early detection and multi-class classification of Diabetic Retinopathy (DR) from retinal fundus images. DR is a major microvascular complication of diabetes and a leading cause of preventable blindness worldwide. Early-stage detection is critical, but manual diagnosis is time-consuming, subjective, and requires expert ophthalmologists — making large-scale screening difficult in rural and resource-limited settings.
+This project presents an automated deep learning–based system for early detection and multi-class classification of Diabetic Retinopathy (DR) from retinal fundus images. DR is a major microvascular complication of diabetes and a leading cause of preventable blindness worldwide. Early-stage detection is critical, but manual diagnosis is time-consuming, subjective, and requires expert ophthalmologists, making large-scale screening difficult in rural and resource-limited settings.
 
-This model uses ResNet-50, a powerful convolutional neural network, along with transfer learning and multiple preprocessing techniques, to classify retinal images into the five DR severity stages:
+This model uses the ResNet-50 convolutional neural network with transfer learning and advanced preprocessing methods to classify retinal fundus images into five DR severity stages:
 
-No DR
+- No DR  
+- Mild DR  
+- Moderate DR  
+- Severe DR  
+- Proliferative DR  
 
-Mild DR
+---
 
-Moderate DR
+## Features
 
-Severe DR
+- Automated detection and classification of Diabetic Retinopathy  
+- ResNet-50-based transfer learning model  
+- Preprocessing steps include resizing, normalization, and data augmentation  
+- Handles dataset imbalance using augmentation techniques  
+- Evaluation metrics include Accuracy, AUC, Precision, Recall, F1-score, and Cohen’s Kappa  
+- Improved model interpretability using Grad-CAM visualizations  
+- Trained on the APTOS 2019 Blindness Detection dataset  
+- Suitable for large-scale, real-world screening applications  
 
-Proliferative DR
+---
 
-Features
+## Dataset
 
-Automated DR detection and multi-class classification
+The model is trained on the APTOS 2019 Blindness Detection Dataset (Kaggle), which contains more than 3,500 high-resolution retinal fundus images annotated by medical experts with DR severity levels (0–4). Each label corresponds to a specific severity stage of Diabetic Retinopathy.
 
-Powered by ResNet-50 with transfer learning
+---
 
-Preprocessing includes resizing, normalization, and augmentation
+## Model Architecture
 
-Handles dataset imbalance using augmentation
+- Base model: ResNet-50 pretrained on ImageNet  
+- Customized classification layers added for DR severity prediction  
+- Optimization techniques used:  
+  - Learning rate scheduling  
+  - Batch normalization  
+  - Early stopping  
+  - Adam optimizer  
 
-Evaluation metrics include Accuracy, AUC, Precision, Recall, F1-score, and Cohen’s Kappa
+---
 
-Model interpretability using Grad-CAM heatmaps
+## Preprocessing and Data Augmentation
 
-Trained on APTOS 2019 Blindness Detection dataset
+The following preprocessing techniques are applied to enhance model performance and reduce overfitting:
 
-Suitable for large-scale screening
+- Image resizing to 224×224  
+- Pixel normalization  
+- Random rotation  
+- Horizontal flipping  
+- Zoom transformations  
+- Brightness adjustments  
 
-Provides transparent predictions appropriate for clinical assistance
+These techniques help the model generalize well across diverse fundus images.
 
-Dataset
+---
 
-The project uses the APTOS 2019 Blindness Detection dataset from Kaggle, which contains over 3,500 high-resolution retinal fundus images annotated by medical experts with DR severity labels (0–4).
+## Evaluation Metrics
 
-Model Architecture
+The model performance is assessed using the following metrics:
 
-Base network: ResNet-50 pretrained on ImageNet
+- Accuracy  
+- AUC (Area Under the ROC Curve)  
+- Precision  
+- Recall  
+- F1-Score  
+- Cohen’s Kappa  
+- Confusion Matrix  
+- Grad-CAM visual explanations  
 
-Fine-tuned top layers for DR classification
+---
 
-Optimized using:
+## Results
 
-Learning rate scheduling
+The trained ResNet-50 model demonstrates strong predictive performance across all five DR severity categories.  
+Grad-CAM heatmaps provide interpretability by highlighting the retinal regions most influential in the model’s decision-making process.
 
-Batch normalization
+---
 
-Early stopping
+## Future Enhancements
 
-Adam optimizer
+- Testing additional models such as VGG16, InceptionV3, and EfficientNet  
+- Hyperparameter tuning using Grid Search Cross-Validation (GSCV)  
+- Deployment as a cloud-based or mobile application for real-time screening  
+- Integration with tele-ophthalmology systems  
 
-Preprocessing and Data Augmentation
+---
 
-Image resizing (224×224)
+## Tech Stack
 
-Normalization
-
-Random rotation
-
-Horizontal flip
-
-Zoom range
-
-Brightness adjustments
-
-These techniques help reduce overfitting and improve generalization, especially for imbalanced medical datasets.
-
-Evaluation Metrics
-
-Accuracy
-
-AUC Score
-
-Confusion Matrix
-
-Precision and Recall
-
-F1-Score
-
-Cohen’s Kappa
-
-Grad-CAM visual explanations
-
-These metrics ensure quantitative reliability and clinical usefulness.
-
-Results
-
-The model achieves high classification accuracy across all severity levels.
-Grad-CAM visualizations highlight important retinal regions influencing predictions, improving model interpretability and trust for healthcare professionals.
-
-Future Enhancements
-
-Testing additional models such as VGG16, InceptionV3, and EfficientNet
-
-Hyperparameter tuning using Grid Search Cross-Validation (GSCV)
-
-Deployment as a web or mobile-based screening tool
-
-Integration with tele-ophthalmology platforms for remote diagnosis
-
-Tech Stack
-
-Python
-
-TensorFlow / Keras
-
-OpenCV
-
-NumPy
-
-Matplotlib
+- Python  
+- TensorFlow / Keras  
+- NumPy  
+- OpenCV  
+- Matplotlib  
+- Seaborn  
+- Pillow 
